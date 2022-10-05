@@ -1,0 +1,18 @@
+<div style="align-items: center; align-content: center;">
+  <h1 mat-dialog-title>Add New Task</h1>
+  <div mat-dialog-content>
+    Would you like to add a new task todo ?
+
+    <mat-form-field appearance="outline">
+      <mat-label>Task</mat-label>
+      <input matInput name="task"  [(ngModel)]="task" required>
+      <mat-icon matSuffix>edit</mat-icon>
+      <mat-error *ngIf="!task">You must enter a task</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="dialogRef.close()">Cancel</button>
+    <button mat-button cdkFocusInitial (click)="addTask()">Add</button>
+  </div>
+</div>

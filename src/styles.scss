@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%;}
+body { margin: 0; }
+
+.cards {
+  margin-bottom: 5px;
+  padding: 2px 8px !important;
+}
+.login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  > h1, >h2 {
+    color: #585858;
+    font-weight: bold !important;
+    text-align: center;
+  }
+  [aria-label=container] {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 60%;
+    width: 50%;
+    min-height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #img-container {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      align-items: center;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0px 6px 6px -6px #dadadf;
+      img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    .form-container {
+      margin-top: 35px;
+      background-color: #fafafa;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0px 0px 4px 0px #dadadf;
+      padding: 70px 4% 0 4%;
+      display: flex;
+      flex-direction: column;
+      form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        mat-form-field {
+          width: 100%;
+          .mat-icon {
+            font-size: 25px;
+          }
+        }
+        [aria-label=email] {
+          .mat-form-field-wrapper {
+            padding: 0;
+          }
+        }
+      }
+      mat-toolbar {
+        background: none;
+        padding: 0;
+      }
+    }
+
+    .icons-container {
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 4%;
+    }
+  }
+}
+.snackbar-error {
+  background-color: red;
+}
+.snackbar-success {
+  background-color: green;
+}
+.mat-simple-snackbar {
+  color: white;
+  font-size: 16px;
+}
+.mat-simple-snackbar::after {
+  font-size: 25px;
+}
+.widget {
+  border-radius: 25px !important;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: #FFF2DE ;
+  align-self: center;
+}
+
+.mat-checkbox-ripple .mat-ripple-element,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: orange !important;
+}
+
+.mat-toolbar {
+  .mat-icon {
+    padding: 0 14px;
+    font-size: 34px;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
