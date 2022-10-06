@@ -4,6 +4,7 @@ import { SnackBarService } from 'src/app/components/snackbar/snackbar.component'
 import { Task } from 'src/app/routes/dashboard/task';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -36,6 +37,7 @@ export class DashboardComponent implements OnInit {
     private todoService: TodoService,
     private snackbarService: SnackBarService,
     public matDialog: MatDialog,
+    private router: Router,
   ) {
   }
 
@@ -88,6 +90,14 @@ export class DashboardComponent implements OnInit {
   }
 
   /**
+    * logout user from the app
+    */
+  logout() {
+    localStorage.removeItem('user_id');// remove device storage
+    this.router.navigate(['login'], { replaceUrl: true });// go to login screen
+  }
+
+  /**
     * delete task
     */
   removeTask(task: any) {
@@ -125,7 +135,4 @@ export class DashboardComponent implements OnInit {
     this.tasksNo = amount;
     this.tempTasks = this.tasks.slice(0, amount);
   }
-}
-function Dialog(Dialog: any, arg1: { width: string; enterAnimationDuration: any; exitAnimationDuration: any; }) {
-  throw new Error('Function not implemented.');
 }
